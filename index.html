@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/IconoV.ico">
+    <title>DATOS_050522</title>
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Estilos -->
+    <link href="css/BaseDC.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  </head>
+
+  <body class="d-flex h-100 text-center text-white bg-secondary">
+
+    <div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
+      
+      <header class="mb-auto">
+        <div>
+          <h2>Levantamiento y visualización de datos</h2>
+          <h4>Sesión de clase - jueves 05-05-2022</h4>
+          <br>
+        </div>
+      </header>
+
+      <main class="px-3">
+        <h3>1. Data Collection</h3>
+        <p class="lead">Es el proceso de recopilación y medición de los datos correspondientes a variables específicas en un sistema establecido, lo que permite responder a las preguntas relacionadas y evaluar resultados.</p>
+        <p class="lead"> <img src="images/R_Datos.png" class="img-fluid" alt="R_Datos"> </p>
+        <p class="lead"> <iframe src=https://ee.humanitarianresponse.info/i/EV9kMXxu width="624" height="428"> </iframe> </p>
+        <p class="lead"> <a target="_blank" href="https://www.kobotoolbox.org/#home" class="btn btn-lg btn-primary fw-bold border-white bg-white">KoBotoolbox</a> </p>
+        <!-- Sección Visualizacion de datos -->
+        <br>
+        <h3>2. Visualización de datos</h3>
+        <p class="lead">La visualización de datos acelera el proceso de toma de decisiones debido a nuestra capacidad de comprenderlos en forma gráfica, entonces la visualización de datos favorece los procesos de toma de decisiones con mayor posibilidad de acierto.</p>
+        <p class="lead"> <a target="_blank" href="https://www.chartjs.org/" class="btn btn-lg btn-primary fw-bold border-white bg-white">Chartjs</a> </p>
+        <h4>Mi Primera Grafica</h4>
+        <p class="lead"> <canvas class="bg-white" id="Mi1Gr" width="300" height="200"> </canvas> </p>
+        <h4>Mi Segunda Grafica</h4>
+        <p class="lead"> <canvas class="bg-white" id="Mi2Gr"> </canvas></p>  
+      </main>
+
+      <footer class="mt-auto text-white-50">
+        <p>Programación de nuevas tecnologías - <a href="https://www.unisabana.edu.co/" class="text-white">Universidad de la Sabana</a>, JPFR, 05-05-2022.</p>
+      </footer>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+  <script>
+    var ctx=document.getElementById("Mi1Gr").getContext("2d");
+    var MiPGr=new Chart(ctx,
+    {
+        type:"bar",
+        data:
+        {
+          labels:['Curso #1','Curso #2','Curso #3', 'Curso #4'],
+          datasets:
+          [{
+            barThickness: 50,
+              label:'Estudiantes',
+                  data:[5,2,7,1],
+                  backgroundColor:
+                  [
+                      'rgb(255,255,0,0.7)',
+                      'rgb(0,255,255,0.7)',
+                      'rgb(255,0,255,0.7)',
+                      'rgb(255,150,150,0.3)'
+                  ],
+                  borderColor: 
+                  [
+                    'rgb(0,255,0)',
+                    'rgb(0,0,255)',
+                    'rgb(255,0,0)',
+                    'rgb(0,0,0)'
+                  ],
+                  borderWidth: 10
+          }]
+        },
+        options:
+        {
+          scales:
+          {
+            yAxes:
+            [{
+              ticks:
+              {
+                beginAtZero:true
+              }
+            }]
+        }}
+    });
+
+    var ctx=document.getElementById("Mi2Gr").getContext("2d");
+    var MiSGr=new Chart(ctx,
+    {
+        type:"polarArea",
+        data:
+        {
+          labels:['Area #1','Area #2','Area #3','Area #4','Area #5'],
+          datasets:
+          [{
+              label:'Areas',
+              data:[8,22,35,40,20],
+              backgroundColor:
+              [
+                  'rgb(255,100,100,1)',
+                  'rgb(100,255,100,1)',
+                  'rgb(100,100,255,1)',
+                  'rgb(100,100,100,0.8)'
+              ],
+              borderColor: 
+              [
+                'rgb(255,0,0)',
+                'rgb(0,255,0)',
+                'rgb(0,0,255)',
+                'rgb(0,0, 0)'
+              ],
+              borderWidth: 3
+          }]
+        },
+    });
+  </script>
+
+</html>
